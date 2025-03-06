@@ -181,8 +181,8 @@ This project was made by a team of AI agents using [Cursor](https://www.cursor.c
     <img src="media/response3.png" style="max-width: 30%;"/>
 </div> -->
 
-<p float="left">
-  <img src="media/response1.png" width="100" />
-  <img src="media/response2.png" width="100" /> 
-  <img src="media/response3.png" width="100" />
+<p float="middle">
+  <img src="media/response1.png" width="32%" />
+  <img src="media/response2.png" width="32%" /> 
+  <img src="media/response3.png" width="32%" />
 </p>
