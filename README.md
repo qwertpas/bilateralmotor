@@ -4,7 +4,7 @@
 
 This Python program simulates two motors connected by bilateral feedback. It shows how they track each other's positions and respond to forces, often used for teleoperation.
 
-![Compressed Motor Simulation](motor_sim_compressed.gif)
+![Compressed Motor Simulation](media/motor_sim_compressed.gif)
 
 ## What It Does
 
@@ -167,3 +167,16 @@ This project demonstrates how bilateral control systems work, which are used in 
 - **Tuning Gains**: Play around with Kp and Kd to see how they affect stability and response.
 - **Force Reflection**: Apply forces to one motor and see how the other reacts.
 - **Inertia Effects**: Adjust inertia to observe different behaviors.
+
+## How this was made
+
+This project was made by a team of AI agents using [Cursor Agents](https://www.cursor.com/agents) and [Claude 3.5 and 3.7 Sonnet](https://www.anthropic.com/claude).
+
+
+![prompt1](media/prompt1.png)
+
+<div style="display: flex; justify-content: space-around;">
+    <img src="media/response1.png" style="max-width: 30%;"/>
+    <img src="media/response2.png" style="max-width: 30%;"/>
+    <img src="media/response3.png" style="max-width: 30%;"/>
+</div>
