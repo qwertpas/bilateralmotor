@@ -186,3 +186,31 @@ This project was made by a team of AI agents using [Cursor](https://www.cursor.c
   <img src="media/response2.png" width="32%" /> 
   <img src="media/response3.png" width="32%" />
 </p>
+
+<p float="middle">
+  <img src="media/req1.png" width="49%" />
+  <img src="media/req2.png" width="49%" /> 
+</p>
+
+<p float="middle">
+  <img src="media/req3.png" width="49%" />
+  <img src="media/req4.png" width="49%" /> 
+</p>
+
+<p float="middle">
+  <img src="media/req5.png" width="49%" />
+</p>
+
+<p float="middle">
+  <img src="media/gif1.png" width="49%" />
+  <img src="media/gif2.png" width="49%" /> 
+</p>
+<p float="middle">
+  <img src="media/gif3.png" width="49%" />
+  <img src="media/gif4.png" width="49%" /> 
+</p>
+<p float="middle">
+  <img src="media/gif5.png" width="49%" />
+  <img src="media/gif6.png" width="49%" /> 
+</p>
+
