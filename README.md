@@ -170,13 +170,19 @@ This project demonstrates how bilateral control systems work, which are used in 
 
 ## How this was made
 
-This project was made by a team of AI agents using [Cursor Agents](https://www.cursor.com/agents) and [Claude 3.5 and 3.7 Sonnet](https://www.anthropic.com/claude).
+This project was made by a team of AI agents using [Cursor](https://www.cursor.com) and [Claude 3.5 and 3.7 Sonnet](https://www.anthropic.com/claude).
 
 
 ![prompt1](media/prompt1.png)
 
-<div style="display: flex; justify-content: space-around;">
-    <img src="media/response1.png" style="max-width: 30%;"/>
+<!-- <div style="display: flex; justify-content: space-around;">
+    <img src="" style="max-width: 30%;"/>
     <img src="media/response2.png" style="max-width: 30%;"/>
     <img src="media/response3.png" style="max-width: 30%;"/>
-</div>
+</div> -->
+
+<p float="left">
+  <img src="media/response1.png" width="100" />
+  <img src="media/response2.png" width="100" /> 
+  <img src="media/response3.png" width="100" />
+</p>
