@@ -26,10 +26,14 @@ class InteractiveHapticPlot:
         self.dt_stability_check = 0.001
         self.sim_time = 1
         self.step_amplitude = 0.100
-        self.stability_threshold = 0.005
+        self.stability_threshold = 0.003
+        
+        # Force saturation limits
+        self.F_robot_max = 200  # Maximum robot force (N)
+        self.F_human_max = 200   # Maximum human force (N)
         
         # Parameter ranges
-        self.spring_range = (1000, 50000)
+        self.spring_range = (1000, 30000)
         self.damping_range = (100, 2000)
         self.delay_range = (1, 50)
         self.C_fb_range = (0.0, 1.5)
@@ -205,8 +209,8 @@ class InteractiveHapticPlot:
                 F_robot[i] = k_r*(x_h_delayed - x_r[i-1]) + b_r*(x_h_dot_delayed - x_r_dot[i-1])
                 F_human[i] = k_h*(reference[i] - x_h[i-1]) + b_h*(0 - x_h_dot[i-1]) - C_fb * F_robot_delayed
                 
-                F_robot[i] = np.clip(F_robot[i], -100, 100)
-                F_human[i] = np.clip(F_human[i], -50, 50)
+                F_robot[i] = np.clip(F_robot[i], -self.F_robot_max, self.F_robot_max)
+                F_human[i] = np.clip(F_human[i], -self.F_human_max, self.F_human_max)
                 
                 x_h_ddot = F_human[i] / self.m_h
                 x_r_ddot = F_robot[i] / self.m_r
@@ -416,7 +420,7 @@ class InteractiveHapticPlot:
                         color = self.get_color_for_position(max_pos)
                         rect = patches.Rectangle((C, -0.5), 
                                               rect_width, 1.0,
-                                              facecolor=color, alpha=0.3, zorder=0)
+                                              facecolor=color, alpha=0.9, zorder=0)
                         rect._stability_patch = True
                         self.ax_coupling.add_patch(rect)
                 else:
@@ -453,12 +457,12 @@ class InteractiveHapticPlot:
             
             if max_pos < 0:  # Unstable
                 color = 'black'
-                alpha = 0.7
+                alpha = 0.9
             else:
                 # Normalize color based on position (50 to 200mm range for color scaling)
                 norm_pos = np.clip((max_pos - 50) / (200 - 50), 0, 1)
                 color = plt.cm.rainbow(norm_pos)
-                alpha = 0.3
+                alpha = 0.9
             
             rect = patches.Rectangle((C, -0.5), C_values[1] - C_values[0], 1.0,
                                    facecolor=color, alpha=alpha, zorder=0)
@@ -492,8 +496,8 @@ class InteractiveHapticPlot:
                 F_robot[i] = self.k_r*(x_h_delayed - x_r[i-1]) + self.b_r*(x_h_dot_delayed - x_r_dot[i-1])
                 F_human[i] = self.k_h*(reference[i] - x_h[i-1]) + self.b_h*(0 - x_h_dot[i-1]) - self.C_fb * F_robot_delayed
                 
-                F_robot[i] = np.clip(F_robot[i], -100, 100)
-                F_human[i] = np.clip(F_human[i], -50, 50)
+                F_robot[i] = np.clip(F_robot[i], -self.F_robot_max, self.F_robot_max)
+                F_human[i] = np.clip(F_human[i], -self.F_human_max, self.F_human_max)
                 
                 x_h_ddot = F_human[i] / self.m_h
                 x_r_ddot = F_robot[i] / self.m_r

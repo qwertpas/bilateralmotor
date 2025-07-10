@@ -9,14 +9,14 @@ b_h = 500        # Human damping constant
 C_fb = 1         # Feedback coupling coefficient
 m_h = 3.5        # Human mass
 m_r = 8.75       # Robot mass
-F_robot_saturation = 100
-F_human_saturation = 50
+F_robot_saturation = 200
+F_human_saturation = 200
 delay_r2h = 10   # Delay from robot to human (time steps)
 delay_h2r = 10   # Delay from human to robot (time steps)
 dt = 0.001       # Time step (seconds)
 
 # Simulation parameters
-sim_time = 2
+sim_time = 1
 sim_steps = int(sim_time / dt)
 time = np.arange(0, sim_time, dt)
 
@@ -31,7 +31,7 @@ F_human = np.zeros(sim_steps)
 # Step input - robot desired position
 reference = np.zeros(sim_steps)
 step_start_time = 0.1  # Start step at 0.1 seconds
-step_amplitude = 0.01  # 1 cm step
+step_amplitude = 0.100  # 1 cm step
 step_start_index = int(step_start_time / dt)
 reference[step_start_index:] = step_amplitude
 
